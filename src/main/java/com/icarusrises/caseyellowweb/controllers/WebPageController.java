@@ -6,10 +6,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Slf4j
 @Controller
-public class HomePageController {
+public class WebPageController {
 
     @RequestMapping("/home")
-    public String userDetails() {
+    public String home() {
         return "index";
+    }
+
+    @RequestMapping("/login")
+    public String login() {
+        return "login";
     }
 }
