@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Servile Login</title>
+	<title>Servile Add User</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -30,20 +30,20 @@
 <body>
 	
 	<div class="limiter">
-		<div class="container-login100" style="background-image: url('images/banner.jpg');">
+		<div class="container-login100" style="background-image: url('images/servile-background.jpg');">
 			<div class="wrap-login100 p-t-30 p-b-50">
 				<span class="login100-form-title p-b-41">
-					Servile Login
+					Servile Add User
 				</span>
 
-				<form class="login100-form validate-form p-b-33 p-t-5" th:object="${loginCommand}" th:action="@{/docheckout}" method="post">
+				<form class="login100-form validate-form p-b-33 p-t-5" th:object="${addUserCommand}" th:action="@{/doCheckoutUserName}" method="post">
 
 					<div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
 						<p>Error! Is Oren typing? </p>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter servileName" >
-						<input class="input100" type="text" name="username" placeholder="Servile Admin User Name" th:field="*{servileName}">
+						<input class="input100" type="text" name="username" placeholder="User Name" th:field="*{userName}">
 						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
 					</div>
 
@@ -54,7 +54,7 @@
 
 					<div class="container-login100-form-btn m-t-32">
 						<button type="submit" class="login100-form-btn">
-							Login
+							Add User
 						</button>
 					</div>
 

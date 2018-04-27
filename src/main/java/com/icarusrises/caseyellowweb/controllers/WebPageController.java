@@ -1,5 +1,6 @@
 package com.icarusrises.caseyellowweb.controllers;
 
+import com.icarusrises.caseyellowweb.commands.AddUserCommand;
 import com.icarusrises.caseyellowweb.commands.LoginCommand;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -27,11 +28,29 @@ public class WebPageController {
         return "login";
     }
 
+    @RequestMapping("/add_user")
+    public String addUser(Model model) {
+
+        model.addAttribute("addUserCommand", new AddUserCommand());
+
+        return "add_user";
+    }
+
     @RequestMapping(value = "/docheckout", method = RequestMethod.POST)
     public String doCheckout(@Valid LoginCommand checkoutCommand, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
             return "login";
+        }
+
+        return "redirect:add_user";
+    }
+
+    @RequestMapping(value = "/doCheckoutUserName", method = RequestMethod.POST)
+    public String doCheckoutUserName(@Valid AddUserCommand checkoutCommand, BindingResult bindingResult) {
+
+        if (bindingResult.hasErrors()) {
+            return "add_user";
         }
 
         return "checkoutcomplete";

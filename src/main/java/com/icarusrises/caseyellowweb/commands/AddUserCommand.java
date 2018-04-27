@@ -6,11 +6,11 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 @Data
-public class LoginCommand {
+public class AddUserCommand {
 
     @NotEmpty
     @Size(min = 4, max = 50)
-    private String servileName;
+    private String userName;
 
     @NotEmpty
     @Size(min = 8, max = 50)
