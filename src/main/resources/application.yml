@@ -1,1 +1,14 @@
-server.port: 6008
+server.port: 80
+
+# Logger
+log.dir: /home/ec2-user/case-yellow/logs
+
+logging:
+  level:
+    org.springframework.web: ERROR
+    caseyellow.server.gateway: INFO
+    org.hibernate: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] - %-5p %c{1}:%L - [%X{correlation-id}] - %m%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] - %-5p %c{1}:%L - [%X{correlation-id}] - %m%n"
+  file: ${log.dir}/caseyellow-central-log
