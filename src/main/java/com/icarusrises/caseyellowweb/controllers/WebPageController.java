@@ -19,11 +19,10 @@ public class WebPageController {
     @RequestMapping({"/", "/home"})
     public String home(@RequestHeader(value="User-Agent") String userAgent) {
 
-        System.out.println("USER AGENT: "+ userAgent);
-
         if (userAgent.toLowerCase().contains("linux")) {
             return "index_linux";
         }
+
         return "index";
     }
 
