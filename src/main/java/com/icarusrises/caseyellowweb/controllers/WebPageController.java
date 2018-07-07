@@ -22,6 +22,7 @@ public class WebPageController {
         if (userAgent.toLowerCase().contains("linux")) {
             return "index_linux";
         }
+
         return "index";
     }
 
