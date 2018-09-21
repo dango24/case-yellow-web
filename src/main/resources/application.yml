@@ -1,4 +1,4 @@
-server.port: 80
+server.port: 8080
 
 # Logger
 log.dir: /home/ec2-user/case-yellow/logs
@@ -11,4 +11,4 @@ logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] - %-5p %c{1}:%L - [%X{correlation-id}] - %m%n"
     file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] - %-5p %c{1}:%L - [%X{correlation-id}] - %m%n"
-  file: ${log.dir}/caseyellow-central-log
+  file: ${log.dir}/caseyellow-web-log
